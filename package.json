@@ -1,0 +1,20 @@
+{
+  "name": "vidcord",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SBence/vidcord.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/SBence/vidcord/issues"
+  },
+  "homepage": "https://github.com/SBence/vidcord#readme"
+}
