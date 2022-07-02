@@ -52,8 +52,23 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
     if (details.media.game)
       ytEmbed.addField("🎮 Game", details.media.game, true);
 
-    if (details.chapters.length)
-      ytEmbed.addField("🎬 Chapters", details.chapters.length, true);
+    if (details.chapters.length) {
+      let chapterIndex = 1;
+      let chaptersString = "";
+      const chapterCountDigits =
+        (Math.log(details.chapters.length) * Math.LOG10E + 1) | 0;
+
+      for (const chapter of details.chapters) {
+        chaptersString = chaptersString.concat(
+          `\`${chapterIndex.toString().padStart(chapterCountDigits, " ")}.\` ${
+            chapter.title
+          }\n`
+        );
+        chapterIndex += 1;
+      }
+
+      ytEmbed.addField("🎬 Chapters", chaptersString, true);
+    }
 
     sendToChannel.send({ embeds: [ytEmbed] });
   }
