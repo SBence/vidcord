@@ -19,38 +19,48 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
       .setThumbnail(details.thumbnails[details.thumbnails.length - 2].url)
       .setColor("#ff0000");
 
-    if (details.lengthSeconds !== "0")
-      ytEmbed.addField("⏱️ Length", secondsToHMS(details.lengthSeconds), true);
+    if (details.lengthSeconds !== "0") {
+      ytEmbed.addFields({
+        name: "⏱️ Length",
+        value: secondsToHMS(details.lengthSeconds),
+        inline: true,
+      });
+    }
 
-    ytEmbed.addField(
-      "👁️ Views",
-      parseInt(details.viewCount).toLocaleString("fr-FR"),
-      true
-    );
-
-    ytEmbed.addField(
-      "📤 Uploaded",
-      ytdlDateToHumanReadable(details.uploadDate),
-      true
+    ytEmbed.addFields(
+      {
+        name: "👁️ Views",
+        value: parseInt(details.viewCount).toLocaleString("fr-FR"),
+        inline: true,
+      },
+      {
+        name: "📤 Uploaded",
+        value: ytdlDateToHumanReadable(details.uploadDate),
+        inline: true,
+      }
     );
 
     if (details.uploadDate !== details.publishDate) {
-      ytEmbed.addField(
-        "📢 Published",
-        ytdlDateToHumanReadable(details.publishDate),
-        true
-      );
+      ytEmbed.addFields({
+        name: "📢 Published",
+        value: ytdlDateToHumanReadable(details.publishDate),
+        inline: true,
+      });
     }
 
     if (details.media.artist && details.media.song)
-      ytEmbed.addField(
-        "🔊 Audio",
-        `${details.media.artist} - ${details.media.song}`,
-        true
-      );
+      ytEmbed.addFields({
+        name: "🔊 Audio",
+        value: `${details.media.artist} - ${details.media.song}`,
+        inline: true,
+      });
 
     if (details.media.game)
-      ytEmbed.addField("🎮 Game", details.media.game, true);
+      ytEmbed.addFields({
+        name: "🎮 Game",
+        value: details.media.game,
+        inline: true,
+      });
 
     if (details.chapters.length) {
       let chapterIndex = 1;
@@ -67,7 +77,10 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
         chapterIndex += 1;
       }
 
-      ytEmbed.addField("🎬 Chapters", chaptersString, true);
+      ytEmbed.addFields({
+        name: "🎬 Chapters",
+        value: chaptersString,
+      });
     }
 
     sendToChannel.send({ embeds: [ytEmbed] });
