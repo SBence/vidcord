@@ -14,9 +14,9 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
         name: details.ownerChannelName,
         url: details.author.channel_url,
         iconURL:
-          details.author.thumbnails[details.author.thumbnails.length - 1].url,
+          details.author.thumbnails[details.author.thumbnails.length - 1]?.url,
       })
-      .setThumbnail(details.thumbnails[details.thumbnails.length - 2].url)
+      .setThumbnail(details.thumbnails[details.thumbnails.length - 2]?.url)
       .setColor("#ff0000");
 
     if (details.lengthSeconds !== "0") {
