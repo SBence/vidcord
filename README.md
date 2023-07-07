@@ -1,4 +1,5 @@
 # VidCord
+
 ## A Discord bot that provides extra inforamtion on video links
 
 ## Installation
@@ -17,7 +18,7 @@ npm install
 DISCORD_TOKEN=<insert your Discord bot token here>
 ```
 
-*For more information on how to create a bot application, [see here](https://discord.com/developers/docs/getting-started#creating-an-app).*
+_For more information on how to create a bot application, [see here](https://discord.com/developers/docs/getting-started#creating-an-app)._
 
 3. Run the application:
 
@@ -31,7 +32,7 @@ node src/index.js
 
 For more information on how to do so, [see here](https://discord.com/developers/docs/getting-started#adding-scopes-and-permissions).
 
-On the *OAuth2 URL Generator* page, make sure to check **bot** under *Scopes* and check **Read Messages/View Channels**, **Send Messages** and **Embed Links** under *Bot Permissions*.
+On the _OAuth2 URL Generator_ page, make sure to check **bot** under _Scopes_ and check **Read Messages/View Channels**, **Send Messages** and **Embed Links** under _Bot Permissions_.
 
 The bot will automatically respond with video information when supported links are sent.
 

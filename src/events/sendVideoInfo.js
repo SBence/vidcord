@@ -37,7 +37,7 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
         name: "📤 Uploaded",
         value: ytdlDateToHumanReadable(details.uploadDate),
         inline: true,
-      }
+      },
     );
 
     if (details.uploadDate !== details.publishDate) {
@@ -72,7 +72,7 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
         chaptersString = chaptersString.concat(
           `\`${chapterIndex.toString().padStart(chapterCountDigits, " ")}.\` ${
             chapter.title
-          }\n`
+          }\n`,
         );
         chapterIndex += 1;
       }
