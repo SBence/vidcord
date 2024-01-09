@@ -14,7 +14,7 @@ const monthNames = [
 ];
 
 export default function ytdlDateToHumanReadable(dateString) {
-  const dateArray = dateString.split("-");
+  const dateArray = dateString.split("T")[0].split("-");
   return `${dateArray[2]} ${monthNames[parseInt(dateArray[1]) - 1]} ${
     dateArray[0]
   }`;
