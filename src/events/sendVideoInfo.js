@@ -1,4 +1,4 @@
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 import ytdl from "ytdl-core";
 import secondsToHMS from "./utils/sendVideoInfo/secondsToHMS.js";
 import ytdlDateToHumanReadable from "./utils/sendVideoInfo/ytdlDateToHumanReadable.js";
@@ -7,7 +7,7 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
   for (const videoURL of videoURLs) {
     const details = (await ytdl.getBasicInfo(videoURL)).videoDetails;
 
-    const ytEmbed = new MessageEmbed()
+    const ytEmbed = new EmbedBuilder()
       .setTitle(details.title)
       .setURL(videoURL)
       .setAuthor({
