@@ -24,6 +24,7 @@ export default function registerEventHandlers(client) {
       message.channel.type !== ChannelType.GuildText ||
       message.author.bot ||
       !message.guild.available ||
+      !message.content ||
       !message.channel
         .permissionsFor(client.user)
         .has([
