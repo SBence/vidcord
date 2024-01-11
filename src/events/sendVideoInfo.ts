@@ -1,9 +1,12 @@
-import { EmbedBuilder } from "discord.js";
+import { EmbedBuilder, TextBasedChannel } from "discord.js";
 import ytdl from "ytdl-core";
 import secondsToHMS from "./utils/sendVideoInfo/secondsToHMS.js";
 import ytdlDateToHumanReadable from "./utils/sendVideoInfo/ytdlDateToHumanReadable.js";
 
-export default async function sendVideoInfo(videoURLs, sendToChannel) {
+export default async function sendVideoInfo(
+  videoURLs: string[],
+  sendToChannel: TextBasedChannel,
+) {
   for (const videoURL of videoURLs) {
     const details = (await ytdl.getBasicInfo(videoURL)).videoDetails;
 
@@ -14,7 +17,8 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
         name: details.ownerChannelName,
         url: details.author.channel_url,
         iconURL:
-          details.author.thumbnails[details.author.thumbnails.length - 1]?.url,
+          details.author.thumbnails?.[details.author.thumbnails.length - 1]
+            ?.url,
       })
       .setThumbnail(details.thumbnails[details.thumbnails.length - 2]?.url)
       .setColor("#ff0000");
@@ -83,6 +87,6 @@ export default async function sendVideoInfo(videoURLs, sendToChannel) {
       });
     }
 
-    sendToChannel.send({ embeds: [ytEmbed] });
+    await sendToChannel.send({ embeds: [ytEmbed] });
   }
 }
