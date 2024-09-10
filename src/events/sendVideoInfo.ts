@@ -1,11 +1,11 @@
-import { EmbedBuilder, TextBasedChannel } from "discord.js";
+import { EmbedBuilder, TextChannel } from "discord.js";
 import ytdl from "ytdl-core";
 import secondsToHMS from "./utils/sendVideoInfo/secondsToHMS.js";
 import ytdlDateToHumanReadable from "./utils/sendVideoInfo/ytdlDateToHumanReadable.js";
 
 export default async function sendVideoInfo(
   videoURLs: string[],
-  sendToChannel: TextBasedChannel,
+  sendToChannel: TextChannel,
 ) {
   for (const videoURL of videoURLs) {
     const details = (await ytdl.getBasicInfo(videoURL)).videoDetails;
