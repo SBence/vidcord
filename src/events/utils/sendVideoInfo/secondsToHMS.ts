@@ -5,7 +5,7 @@ export default function secondsToHMS(seconds: string) {
   const m = Math.floor((secondsNumber % 3600) / 60);
   const s = Math.floor((secondsNumber % 3600) % 60);
 
-  const hDisplay = h > 0 ? h + ":" : "";
+  const hDisplay = h > 0 ? h.toString() + ":" : "";
   const mDisplay = m.toString().padStart(1, "0") + ":";
   const sDisplay = s.toString().padStart(2, "0");
 
