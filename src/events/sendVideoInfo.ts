@@ -44,20 +44,23 @@ export default async function sendVideoInfo(
       },
     );
 
-    if (details.uploadDate !== details.publishDate) {
+    if (details.uploadDate !== details.publishDate)
       ytEmbed.addFields({
         name: "📢 Published",
         value: ytdlDateToHumanReadable(details.publishDate),
         inline: true,
       });
-    }
 
-    if (details.media.artist && details.media.song)
+    if (details.media.song) {
+      const artist = details.media.artist;
       ytEmbed.addFields({
         name: "🔊 Audio",
-        value: `${details.media.artist} - ${details.media.song}`,
+        value: artist
+          ? `${artist} - ${details.media.song}`
+          : details.media.song,
         inline: true,
       });
+    }
 
     if (details.media.game)
       ytEmbed.addFields({
