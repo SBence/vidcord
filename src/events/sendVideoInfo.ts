@@ -1,5 +1,5 @@
+import ytdl from "@distube/ytdl-core";
 import { EmbedBuilder, TextChannel } from "discord.js";
-import ytdl from "ytdl-core";
 import secondsToHMS from "./utils/sendVideoInfo/secondsToHMS.js";
 import ytdlDateToHumanReadable from "./utils/sendVideoInfo/ytdlDateToHumanReadable.js";
 
