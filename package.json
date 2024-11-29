@@ -17,20 +17,20 @@
   },
   "homepage": "https://github.com/SBence/vidcord#readme",
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "@types/node": "^22.7.4",
-    "eslint": "^9.11.1",
+    "@eslint/js": "^9.14.0",
+    "@types/node": "^22.9.0",
+    "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.0.0",
-    "globals": "^15.9.0",
+    "globals": "^15.12.0",
     "prettier": "^3.0.0",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.8.0"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0"
   },
   "dependencies": {
     "bufferutil": "^4.0.8",
     "discord.js": "^14.16.3",
     "dotenv": "^16.0.1",
-    "utf-8-validate": "^6.0.3",
+    "utf-8-validate": "^6.0.5",
     "ytdl-core": "^4.11.0",
     "zlib-sync": "^0.1.9"
   }
