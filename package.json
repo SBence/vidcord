@@ -6,8 +6,8 @@
   "scripts": {
     "start": "tsc && node dist/index.js",
     "lint": "eslint .",
-    "formatting:check": "yarn prettier --check .",
-    "formatting:apply": "yarn prettier --write ."
+    "formatting:check": "prettier --check .",
+    "formatting:apply": "prettier --write ."
   },
   "repository": {
     "type": "git",
