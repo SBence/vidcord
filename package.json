@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/SBence/vidcord#readme",
   "dependencies": {
-    "@distube/ytdl-core": "^4.15.8",
+    "@distube/ytdl-core": "^4.15.9",
     "bufferutil": "^4.0.9",
     "discord.js": "^14.17.3",
     "dotenv": "^16.4.7",
@@ -26,9 +26,9 @@
     "zlib-sync": "^0.1.9"
   },
   "devDependencies": {
-    "@eslint/js": "^9.18.0",
+    "@eslint/js": "^9.19.0",
     "@types/node": "^22.10.10",
-    "eslint": "^9.18.0",
+    "eslint": "^9.19.0",
     "eslint-config-prettier": "^9.0.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
