@@ -1,4 +1,4 @@
-name: Build project
+name: Run code quality checks
 
 on: pull_request
 
@@ -14,6 +14,12 @@ jobs:
         uses: SBence/setup-node-workflow@master
         with:
           node-version: "*"
+
+      - name: Check formatting
+        run: yarn formatting:check
+
+      - name: Lint code
+        run: yarn lint
 
       - name: Build project
         run: yarn tsc --noEmit
