@@ -1,30 +1,27 @@
 # VidCord
 
-## A Discord bot that provides extra inforamtion on video links
+A Discord bot that provides extra information on video links
 
 ## Installation
 
-1. Clone this repository and install the dependencies:
+1. Clone this repository, install the dependencies and build the bot:
 
-```sh
-git clone https://github.com/SBence/vidcord.git
-cd vidcord
-npm install
-```
+   ```sh
+   git clone https://github.com/SBence/vidcord.git
+   cd vidcord
+   yarn install
+   yarn run build
+   ```
 
 2. Add your bot token to the `.env` file in the project directory:
 
-```
-DISCORD_TOKEN=<insert your Discord bot token here>
-```
+   ```properties
+   TOKEN=<insert your Discord bot token here>
+   ```
 
-_For more information on how to create a bot application, [see here](https://discord.com/developers/docs/getting-started#creating-an-app)._
+   _For more information on creating a bot application, [see here](https://discord.com/developers/docs/getting-started#creating-an-app)._
 
-3. Run the application:
-
-```sh
-node src/index.js
-```
+3. Run `build/index.js` using your preferred method. (For example, to run with Node.js: `node build/index.js`)
 
 ## Bot usage
 
@@ -32,7 +29,8 @@ node src/index.js
 
 For more information on how to do so, [see here](https://discord.com/developers/docs/getting-started#adding-scopes-and-permissions).
 
-On the _OAuth2 URL Generator_ page, make sure to check **bot** under _Scopes_ and check **Read Messages/View Channels**, **Send Messages** and **Embed Links** under _Bot Permissions_.
+> [!IMPORTANT]
+> On the _OAuth2_ page, make sure to check **bot** under _Scopes_ and check **View Channels**, **Send Messages** and **Embed Links** under _Bot Permissions_. Additionally, on the **Bot** page, make sure that **Message Content Intent** is enabled under _Privileged Gateway Intents_.
 
 The bot will automatically respond with video information when supported links are sent.
 
