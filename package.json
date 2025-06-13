@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/SBence/vidcord#readme",
   "dependencies": {
-    "@distube/ytdl-core": "^4.16.11",
+    "@distube/ytdl-core": "^4.16.12",
     "bufferutil": "^4.0.9",
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
